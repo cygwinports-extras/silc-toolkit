@@ -1,0 +1,213 @@
+silc-toolkit
+------------------------------------------
+SILC (Secure Internet Live Conferencing) is a protocol which provides 
+secure conferencing services on the Internet over insecure channel. SILC 
+is IRC-like software although internally they are very different. The 
+biggest similarity between SILC and IRC is that they both provide 
+conferencing services and that SILC has almost the same commands as IRC.  
+Other than that they are nothing alike.  Major differences are that SILC 
+is secure what IRC is not in any way.  The network model is also 
+entirely different compared to IRC.
+
+This package provides the SILC protocol libraries.
+
+Runtime requirements:
+  cygwin-1.5.24-2
+  libgmp3-4.2.1-1
+  libiconv2-1.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygwin-1.5.24-2
+  autoconf2.5-2.61-1
+  automake1.9-1.9.6-2
+  binutils-20060817-1
+  cygport-0.3.5-1
+  gawk-3.1.5-4
+  gcc-core-3.4.4-3
+  libtool1.5-1.5.23a-2
+  make-3.81-1
+  pkg-config-0.21-1
+  sed-4.1.5-2
+
+Canonical website:
+  http://silcnet.org/
+
+Canonical download:
+  http://silcnet.org/download/toolkit/sources/
+
+-------------------------------------------
+
+Build instructions:
+  unpack silc-toolkit-1.1.3-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./silc-toolkit-1.1.3-X.cygport all
+
+This will create:
+  /usr/src/libsilc-devel-1.1.3-X.tar.bz2
+  /usr/src/libsilc112-1.1.3-X.tar.bz2
+  /usr/src/silc-toolkit-1.1.3-X-src.tar.bz2
+  /usr/src/silc-toolkit-1.1.3-X.tar.bz2
+  /usr/src/silc-toolkit-doc-1.1.3-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+(silc-toolkit)
+  /usr/lib/silc/aes.sim.la
+  /usr/lib/silc/aes.sim.so
+  /usr/lib/silc/blowfish.sim.la
+  /usr/lib/silc/blowfish.sim.so
+  /usr/lib/silc/md5.sim.la
+  /usr/lib/silc/md5.sim.so
+  /usr/lib/silc/none.sim.la
+  /usr/lib/silc/none.sim.so
+  /usr/lib/silc/rsa.sim.la
+  /usr/lib/silc/rsa.sim.so
+  /usr/lib/silc/sha1.sim.la
+  /usr/lib/silc/sha1.sim.so
+  /usr/lib/silc/sha256.sim.la
+  /usr/lib/silc/sha256.sim.so
+  /usr/lib/silc/twofish.sim.la
+  /usr/lib/silc/twofish.sim.so
+  /usr/share/doc/Cygwin/silc-toolkit-1.1.3.README
+  /usr/share/doc/silc-toolkit-1.1.3/BSD
+  /usr/share/doc/silc-toolkit-1.1.3/CHANGES
+  /usr/share/doc/silc-toolkit-1.1.3/COPYING
+  /usr/share/doc/silc-toolkit-1.1.3/CREDITS
+  /usr/share/doc/silc-toolkit-1.1.3/CodingStyle
+  /usr/share/doc/silc-toolkit-1.1.3/FAQ
+  /usr/share/doc/silc-toolkit-1.1.3/GPL
+  /usr/share/doc/silc-toolkit-1.1.3/INSTALL
+  /usr/share/doc/silc-toolkit-1.1.3/README
+  /usr/share/doc/silc-toolkit-1.1.3/README.CVS
+  /usr/share/doc/silc-toolkit-1.1.3/README.MACOSX
+  /usr/share/doc/silc-toolkit-1.1.3/README.SYMBIAN
+  /usr/share/doc/silc-toolkit-1.1.3/README.WIN32
+  /usr/share/doc/silc-toolkit-1.1.3/TODO
+
+(libsilc112)
+  /usr/bin/cygsilc-1-1-2.dll
+  /usr/bin/cygsilcclient-1-1-2.dll
+
+(libsilc-devel)
+  /usr/include/silc/client.h
+  /usr/include/silc/mp_gmp.h
+  /usr/include/silc/silc.h
+  /usr/include/silc/silcapputil.h
+  /usr/include/silc/silcargument.h
+  /usr/include/silc/silcasn1.h
+  /usr/include/silc/silcasn1_i.h
+  /usr/include/silc/silcasync.h
+  /usr/include/silc/silcasync_i.h
+  /usr/include/silc/silcatomic.h
+  /usr/include/silc/silcattrs.h
+  /usr/include/silc/silcauth.h
+  /usr/include/silc/silcber.h
+  /usr/include/silc/silcbuffer.h
+  /usr/include/silc/silcbuffmt.h
+  /usr/include/silc/silcchannel.h
+  /usr/include/silc/silccipher.h
+  /usr/include/silc/silcclient.h
+  /usr/include/silc/silcclient_entry.h
+  /usr/include/silc/silccommand.h
+  /usr/include/silc/silccond.h
+  /usr/include/silc/silcconfig.h
+  /usr/include/silc/silcconnauth.h
+  /usr/include/silc/silcdlist.h
+  /usr/include/silc/silcfdstream.h
+  /usr/include/silc/silcfileutil.h
+  /usr/include/silc/silcfsm.h
+  /usr/include/silc/silcfsm_i.h
+  /usr/include/silc/silchash.h
+  /usr/include/silc/silchashtable.h
+  /usr/include/silc/silchmac.h
+  /usr/include/silc/silchttpphp.h
+  /usr/include/silc/silchttpserver.h
+  /usr/include/silc/silcid.h
+  /usr/include/silc/silcidcache.h
+  /usr/include/silc/silclist.h
+  /usr/include/silc/silclog.h
+  /usr/include/silc/silclog_i.h
+  /usr/include/silc/silcmath.h
+  /usr/include/silc/silcmemory.h
+  /usr/include/silc/silcmessage.h
+  /usr/include/silc/silcmessage_i.h
+  /usr/include/silc/silcmime.h
+  /usr/include/silc/silcmime_i.h
+  /usr/include/silc/silcmode.h
+  /usr/include/silc/silcmp.h
+  /usr/include/silc/silcmutex.h
+  /usr/include/silc/silcnet.h
+  /usr/include/silc/silcnet_i.h
+  /usr/include/silc/silcnotify.h
+  /usr/include/silc/silcpacket.h
+  /usr/include/silc/silcpk.h
+  /usr/include/silc/silcpkcs.h
+  /usr/include/silc/silcpkcs1.h
+  /usr/include/silc/silcpubkey.h
+  /usr/include/silc/silcrng.h
+  /usr/include/silc/silcschedule.h
+  /usr/include/silc/silcschedule_i.h
+  /usr/include/silc/silcsftp.h
+  /usr/include/silc/silcsftp_fs.h
+  /usr/include/silc/silcsim.h
+  /usr/include/silc/silcsimutil.h
+  /usr/include/silc/silcske.h
+  /usr/include/silc/silcske_groups.h
+  /usr/include/silc/silcske_i.h
+  /usr/include/silc/silcske_payload.h
+  /usr/include/silc/silcskr.h
+  /usr/include/silc/silcskr_i.h
+  /usr/include/silc/silcsnprintf.h
+  /usr/include/silc/silcsocketstream.h
+  /usr/include/silc/silcsocketstream_i.h
+  /usr/include/silc/silcstack.h
+  /usr/include/silc/silcstack_i.h
+  /usr/include/silc/silcstatus.h
+  /usr/include/silc/silcstream.h
+  /usr/include/silc/silcstringprep.h
+  /usr/include/silc/silcstrutil.h
+  /usr/include/silc/silcsymbian.h
+  /usr/include/silc/silcthread.h
+  /usr/include/silc/silctime.h
+  /usr/include/silc/silctypes.h
+  /usr/include/silc/silcutf8.h
+  /usr/include/silc/silcutil.h
+  /usr/include/silc/silcvcard.h
+  /usr/include/silc/silcversion.h
+  /usr/include/silc/silcwin32.h
+  /usr/include/silc/stacktrace.h
+  /usr/lib/libsilc.a
+  /usr/lib/libsilc.dll.a
+  /usr/lib/libsilc.la
+  /usr/lib/libsilcclient.a
+  /usr/lib/libsilcclient.dll.a
+  /usr/lib/libsilcclient.la
+  /usr/lib/pkgconfig/silc.pc
+  /usr/lib/pkgconfig/silcclient.pc
+
+(silc-toolkit-doc)
+  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-presence-attrs-04.txt
+  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-silc-commands-07.txt
+  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-silc-flags-payloads-04.txt
+  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-silc-ke-auth-09.txt
+  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-silc-multimedia-session-00.txt
+  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-silc-pp-09.txt
+  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-silc-spec-09.txt
+  /usr/share/doc/silc-toolkit-1.1.3/toolkit/*
+  /usr/share/doc/silc-toolkit-1.1.3/tutorial/*
+
+------------------
+
+Port Notes:
+
+----- version 1.1.3-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
