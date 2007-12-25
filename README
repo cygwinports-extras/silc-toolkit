@@ -20,9 +20,9 @@ Build requirements:
 (besides corresponding -devel packages)
   cygwin-1.5.24-2
   autoconf2.5-2.61-1
-  automake1.9-1.9.6-2
+  automake1.10-1.10-1
   binutils-20060817-1
-  cygport-0.3.5-1
+  cygport-0.3.7-1
   gawk-3.1.5-4
   gcc-core-3.4.4-3
   libtool1.5-1.5.23a-2
@@ -39,18 +39,18 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack silc-toolkit-1.1.3-X-src.tar.bz2
+  unpack silc-toolkit-1.1.5-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./silc-toolkit-1.1.3-X.cygport all
+  cygport ./silc-toolkit-1.1.5-X.cygport all
 
 This will create:
-  /usr/src/libsilc-devel-1.1.3-X.tar.bz2
-  /usr/src/libsilc112-1.1.3-X.tar.bz2
-  /usr/src/silc-toolkit-1.1.3-X-src.tar.bz2
-  /usr/src/silc-toolkit-1.1.3-X.tar.bz2
-  /usr/src/silc-toolkit-doc-1.1.3-X.tar.bz2
+  /usr/src/libsilc-devel-1.1.5-X.tar.bz2
+  /usr/src/libsilc112-1.1.5-X.tar.bz2
+  /usr/src/silc-toolkit-1.1.5-X-src.tar.bz2
+  /usr/src/silc-toolkit-1.1.5-X.tar.bz2
+  /usr/src/silc-toolkit-doc-1.1.5-X.tar.bz2
 
 -------------------------------------------
 
@@ -73,21 +73,21 @@ Files included in the binary packages:
   /usr/lib/silc/sha256.sim.so
   /usr/lib/silc/twofish.sim.la
   /usr/lib/silc/twofish.sim.so
-  /usr/share/doc/Cygwin/silc-toolkit-1.1.3.README
-  /usr/share/doc/silc-toolkit-1.1.3/BSD
-  /usr/share/doc/silc-toolkit-1.1.3/CHANGES
-  /usr/share/doc/silc-toolkit-1.1.3/COPYING
-  /usr/share/doc/silc-toolkit-1.1.3/CREDITS
-  /usr/share/doc/silc-toolkit-1.1.3/CodingStyle
-  /usr/share/doc/silc-toolkit-1.1.3/FAQ
-  /usr/share/doc/silc-toolkit-1.1.3/GPL
-  /usr/share/doc/silc-toolkit-1.1.3/INSTALL
-  /usr/share/doc/silc-toolkit-1.1.3/README
-  /usr/share/doc/silc-toolkit-1.1.3/README.CVS
-  /usr/share/doc/silc-toolkit-1.1.3/README.MACOSX
-  /usr/share/doc/silc-toolkit-1.1.3/README.SYMBIAN
-  /usr/share/doc/silc-toolkit-1.1.3/README.WIN32
-  /usr/share/doc/silc-toolkit-1.1.3/TODO
+  /usr/share/doc/Cygwin/silc-toolkit-1.1.5.README
+  /usr/share/doc/silc-toolkit-1.1.5/BSD
+  /usr/share/doc/silc-toolkit-1.1.5/CHANGES
+  /usr/share/doc/silc-toolkit-1.1.5/COPYING
+  /usr/share/doc/silc-toolkit-1.1.5/CREDITS
+  /usr/share/doc/silc-toolkit-1.1.5/CodingStyle
+  /usr/share/doc/silc-toolkit-1.1.5/FAQ
+  /usr/share/doc/silc-toolkit-1.1.5/GPL
+  /usr/share/doc/silc-toolkit-1.1.5/INSTALL
+  /usr/share/doc/silc-toolkit-1.1.5/README
+  /usr/share/doc/silc-toolkit-1.1.5/README.CVS
+  /usr/share/doc/silc-toolkit-1.1.5/README.MACOSX
+  /usr/share/doc/silc-toolkit-1.1.5/README.SYMBIAN
+  /usr/share/doc/silc-toolkit-1.1.5/README.WIN32
+  /usr/share/doc/silc-toolkit-1.1.5/TODO
 
 (libsilc112)
   /usr/bin/cygsilc-1-1-2.dll
@@ -191,19 +191,22 @@ Files included in the binary packages:
   /usr/lib/pkgconfig/silcclient.pc
 
 (silc-toolkit-doc)
-  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-presence-attrs-04.txt
-  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-silc-commands-07.txt
-  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-silc-flags-payloads-04.txt
-  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-silc-ke-auth-09.txt
-  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-silc-multimedia-session-00.txt
-  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-silc-pp-09.txt
-  /usr/share/doc/silc-toolkit-1.1.3/draft-riikonen-silc-spec-09.txt
-  /usr/share/doc/silc-toolkit-1.1.3/toolkit/*
-  /usr/share/doc/silc-toolkit-1.1.3/tutorial/*
+  /usr/share/doc/silc-toolkit-1.1.5/draft-riikonen-presence-attrs-04.txt
+  /usr/share/doc/silc-toolkit-1.1.5/draft-riikonen-silc-commands-07.txt
+  /usr/share/doc/silc-toolkit-1.1.5/draft-riikonen-silc-flags-payloads-04.txt
+  /usr/share/doc/silc-toolkit-1.1.5/draft-riikonen-silc-ke-auth-09.txt
+  /usr/share/doc/silc-toolkit-1.1.5/draft-riikonen-silc-multimedia-session-00.txt
+  /usr/share/doc/silc-toolkit-1.1.5/draft-riikonen-silc-pp-09.txt
+  /usr/share/doc/silc-toolkit-1.1.5/draft-riikonen-silc-spec-09.txt
+  /usr/share/doc/silc-toolkit-1.1.5/toolkit/*
+  /usr/share/doc/silc-toolkit-1.1.5/tutorial/*
 
 ------------------
 
 Port Notes:
+
+----- version 1.1.5-1 -----
+Version bump.
 
 ----- version 1.1.3-1 -----
 Initial release for Cygwin.
