@@ -1,0 +1,36 @@
+--- origsrc/silc-toolkit-1.1.9/lib/silcsim/Makefile.am	2009-01-08 08:29:27.000000000 -0600
++++ src/silc-toolkit-1.1.9/lib/silcsim/Makefile.am	2009-05-03 22:17:37.671750000 -0500
+@@ -36,7 +36,7 @@ libsilcsim_la_SOURCES =	silcsim.c	silcsi
+ #
+ # SILC Ciphers to be compiled as modules
+ #
+-SIM_CIPHER_OBJS =        none.o        blowfish.o        aes.o        rsa.o        twofish.o
++SIM_CIPHER_OBJS =        none.o        blowfish.o        aes.o        twofish.o
+ 
+ #
+ # SILC Hash Functions to be compiled as modules
+@@ -47,11 +47,13 @@ if SILC_SIM
+ all: $(SIM_CIPHER_OBJS) $(SIM_HASH_OBJS)
+ endif
+ 
++LTFLAGS = --tag=disable-static -module -avoid-version -no-undefined -shrext .so
++
+ $(SIM_CIPHER_OBJS):
+-	@if test '!' -f lib$*.la ; then	  $(LIBTOOL) --mode=link $(CCLD) -rpath $(silc_modulesdir)		../silccrypt/$*.lo -o lib$*.la $(LTFLAGS);	  cd $(srcdir) && $(LN_S) -f $(srcdir)/.libs/lib$*.so		$(srcdir)/$*.sim.so;	fi
++	@if test '!' -f lib$*.la ; then	  $(LIBTOOL) --mode=link $(CCLD) -rpath $(silc_modulesdir)		../silccrypt/$*.lo -o lib$*.la $(LTFLAGS) && $(LN_S) -f .libs/cyg$*.so		$*.sim.so;	fi
+ 
+ $(SIM_HASH_OBJS):
+-	@if test '!' -f lib$*.la ; then	  $(LIBTOOL) --mode=link $(CCLD) -rpath $(silc_modulesdir)		../silccrypt/$*.lo -o lib$*.la $(LTFLAGS);	  cd $(srcdir) && $(LN_S) -f $(srcdir)/.libs/lib$*.so		$(srcdir)/$*.sim.so;	fi
++	@if test '!' -f lib$*.la ; then	  $(LIBTOOL) --mode=link $(CCLD) -rpath $(silc_modulesdir)		../silccrypt/$*.lo -o lib$*.la $(LTFLAGS) && $(LN_S) -f .libs/cyg$*.so		$*.sim.so;	fi
+ 
+ CLEANFILES = *.sim.so *.la
+ 
+@@ -64,7 +66,7 @@ EXTRA_DIST = *.h
+ #
+ install-data-hook:
+ 	-mkdir -p $(modulesdir)
+-	-$(INSTALL_DATA) $(top_srcdir)/lib/silcsim/*.so $(modulesdir)/
++	-$(INSTALL) *.so $(modulesdir)/
+ 
+ include $(top_srcdir)/Makefile.defines.in
+ 

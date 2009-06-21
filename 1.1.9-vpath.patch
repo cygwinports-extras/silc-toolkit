@@ -1,0 +1,30 @@
+--- origsrc/silc-toolkit-1.1.9/Makefile.defines.in	2009-01-08 08:29:29.000000000 -0600
++++ src/silc-toolkit-1.1.9/Makefile.defines.in	2009-05-03 17:23:13.484250000 -0500
+@@ -43,6 +43,7 @@
+ INCLUDES = $(ADD_INCLUDES) $(SILC_CFLAGS) -DHAVE_SILCDEFS_H \
+ 	-I$(srcdir) -I$(top_srcdir) \
+ 	-I$(silc_top_srcdir) $(SILC_LIB_INCLUDES) \
++	-I$(top_builddir)/includes \
+ 	-I$(silc_top_srcdir)/includes \
+ 	-I$(silc_top_srcdir)/doc
+ 
+--- origsrc/silc-toolkit-1.1.9/configure.ac	2009-01-08 08:29:31.000000000 -0600
++++ src/silc-toolkit-1.1.9/configure.ac	2009-05-03 17:23:13.484250000 -0500
+@@ -1241,7 +1245,7 @@ AC_DEFINE_UNQUOTED([SILC_ETCDIR], "$ETCD
+ # Make enable-shared aware
+ AM_CONDITIONAL(SILC_ENABLE_SHARED, test "$enable_shared" = yes)
+ 
+-SILC_TOP_SRCDIR=`pwd`
++SILC_TOP_SRCDIR=`cd $srcdir; pwd`
+ 
+ # Included configure scripts
+ #
+@@ -1555,7 +1559,7 @@ AC_SUBST(__SILC_HAVE_SIM)
+ AC_SUBST(__SILC_ENABLE_DEBUG)
+ AC_SUBST(__SILC_PACKAGE_VERSION)
+ 
+-INCLUDE_DEFINES_INT="include \$(top_srcdir)/Makefile.defines_int"
++INCLUDE_DEFINES_INT="include \$(top_builddir)/Makefile.defines_int"
+ AC_SUBST(INCLUDE_DEFINES_INT)
+ 
+ 

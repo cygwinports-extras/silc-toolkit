@@ -1,7 +1,7 @@
 category: Net
-requires: cygwin libsilc112 libgmp-devel libiconv
+requires: libgcc1 libgmp3 libiconv2
 external-source: silc-toolkit
-sdesc: "SILC messaging protocol libraries (development)"
+sdesc: "SILC messaging protocol libraries (core runtime)"
 ldesc: "SILC (Secure Internet Live Conferencing) is a protocol which 
 provides secure conferencing services on the Internet over insecure 
 channel. SILC is IRC-like software although internally they are very 

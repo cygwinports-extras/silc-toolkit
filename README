@@ -12,21 +12,22 @@ entirely different compared to IRC.
 This package provides the SILC protocol libraries.
 
 Runtime requirements:
-  cygwin-1.5.25-11
-  libgmp3-4.2.2-1
-  libiconv2-1.11-1
+  cygwin-1.7.0-50
+  libgcc1-4.3.2-2
+  libgmp3-4.3.1-3
+  libiconv2-1.13-10
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.61-1
-  automake1.10-1.10.1-1
-  binutils-20060817-1
-  cygport-0.3.9-1
-  gawk-3.1.6-1
-  gcc-core-3.4.4-3
-  libtool-2.2.2-2
-  make-3.81-1
-  pkg-config-0.21-1
+  autoconf2.5-2.63-10
+  automake1.10-1.10.1-10
+  binutils-20080624-2
+  cygport-0.9.7-1
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
+  libtool-2.2.7a-13
+  make-3.81-2
+  pkg-config-0.23b-10
   sed-4.1.5-2
 
 Canonical website:
@@ -38,59 +39,52 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack silc-toolkit-1.1.7-X-src.tar.bz2
+  unpack silc-toolkit-1.1.9-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./silc-toolkit-1.1.7-X.cygport all
+  cygport ./silc-toolkit-1.1.9-X.cygport all
 
 This will create:
-  /usr/src/libsilc-devel-1.1.7-X.tar.bz2
-  /usr/src/libsilc112-1.1.7-X.tar.bz2
-  /usr/src/silc-toolkit-1.1.7-X-src.tar.bz2
-  /usr/src/silc-toolkit-1.1.7-X.tar.bz2
-  /usr/src/silc-toolkit-doc-1.1.7-X.tar.bz2
+  /usr/src/libsilc-devel-1.1.9-X.tar.bz2
+  /usr/src/libsilc-doc-1.1.9-X.tar.bz2
+  /usr/src/libsilc1.1_2-1.1.9-X.tar.bz2
+  /usr/src/libsilcclient1.1_3-1.1.9-X.tar.bz2
+  /usr/src/silc-toolkit-1.1.9-X-src.tar.bz2
+  /usr/src/silc-toolkit-1.1.9-X.tar.bz2
 
 -------------------------------------------
 
 Files included in the binary packages:
 
 (silc-toolkit)
-  /usr/lib/silc/aes.sim.la
   /usr/lib/silc/aes.sim.so
-  /usr/lib/silc/blowfish.sim.la
   /usr/lib/silc/blowfish.sim.so
-  /usr/lib/silc/md5.sim.la
   /usr/lib/silc/md5.sim.so
-  /usr/lib/silc/none.sim.la
   /usr/lib/silc/none.sim.so
-  /usr/lib/silc/rsa.sim.la
-  /usr/lib/silc/rsa.sim.so
-  /usr/lib/silc/sha1.sim.la
   /usr/lib/silc/sha1.sim.so
-  /usr/lib/silc/sha256.sim.la
   /usr/lib/silc/sha256.sim.so
-  /usr/lib/silc/twofish.sim.la
   /usr/lib/silc/twofish.sim.so
-  /usr/share/doc/Cygwin/silc-toolkit-1.1.7.README
-  /usr/share/doc/silc-toolkit-1.1.7/BSD
-  /usr/share/doc/silc-toolkit-1.1.7/CHANGES
-  /usr/share/doc/silc-toolkit-1.1.7/COPYING
-  /usr/share/doc/silc-toolkit-1.1.7/CREDITS
-  /usr/share/doc/silc-toolkit-1.1.7/CodingStyle
-  /usr/share/doc/silc-toolkit-1.1.7/FAQ
-  /usr/share/doc/silc-toolkit-1.1.7/GPL
-  /usr/share/doc/silc-toolkit-1.1.7/INSTALL
-  /usr/share/doc/silc-toolkit-1.1.7/README
-  /usr/share/doc/silc-toolkit-1.1.7/README.CVS
-  /usr/share/doc/silc-toolkit-1.1.7/README.MACOSX
-  /usr/share/doc/silc-toolkit-1.1.7/README.SYMBIAN
-  /usr/share/doc/silc-toolkit-1.1.7/README.WIN32
-  /usr/share/doc/silc-toolkit-1.1.7/TODO
+  /usr/share/doc/silc-toolkit/BSD
+  /usr/share/doc/silc-toolkit/CHANGES
+  /usr/share/doc/silc-toolkit/COPYING
+  /usr/share/doc/silc-toolkit/CREDITS
+  /usr/share/doc/silc-toolkit/CodingStyle
+  /usr/share/doc/silc-toolkit/FAQ
+  /usr/share/doc/silc-toolkit/GPL
+  /usr/share/doc/silc-toolkit/INSTALL
+  /usr/share/doc/silc-toolkit/README
+  /usr/share/doc/silc-toolkit/README.CVS
+  /usr/share/doc/silc-toolkit/README.MACOSX
+  /usr/share/doc/silc-toolkit/README.SYMBIAN
+  /usr/share/doc/silc-toolkit/README.WIN32
+  /usr/share/doc/silc-toolkit/TODO
 
-(libsilc112)
+(libsilc1.1_2)
   /usr/bin/cygsilc-1-1-2.dll
-  /usr/bin/cygsilcclient-1-1-2.dll
+
+(libsilcclient1.1_3)
+  /usr/bin/cygsilcclient-1-1-3.dll
 
 (libsilc-devel)
   /usr/include/silc/client.h
@@ -190,28 +184,22 @@ Files included in the binary packages:
   /usr/lib/pkgconfig/silcclient.pc
 
 (silc-toolkit-doc)
-  /usr/share/doc/silc-toolkit-1.1.7/draft-riikonen-presence-attrs-04.txt
-  /usr/share/doc/silc-toolkit-1.1.7/draft-riikonen-silc-commands-07.txt
-  /usr/share/doc/silc-toolkit-1.1.7/draft-riikonen-silc-flags-payloads-04.txt
-  /usr/share/doc/silc-toolkit-1.1.7/draft-riikonen-silc-ke-auth-09.txt
-  /usr/share/doc/silc-toolkit-1.1.7/draft-riikonen-silc-multimedia-session-00.txt
-  /usr/share/doc/silc-toolkit-1.1.7/draft-riikonen-silc-pp-09.txt
-  /usr/share/doc/silc-toolkit-1.1.7/draft-riikonen-silc-spec-09.txt
-  /usr/share/doc/silc-toolkit-1.1.7/toolkit/*
-  /usr/share/doc/silc-toolkit-1.1.7/tutorial/*
+  /usr/share/doc/silc-toolkit/draft-riikonen-presence-attrs-04.txt
+  /usr/share/doc/silc-toolkit/draft-riikonen-silc-commands-07.txt
+  /usr/share/doc/silc-toolkit/draft-riikonen-silc-flags-payloads-04.txt
+  /usr/share/doc/silc-toolkit/draft-riikonen-silc-ke-auth-09.txt
+  /usr/share/doc/silc-toolkit/draft-riikonen-silc-multimedia-session-00.txt
+  /usr/share/doc/silc-toolkit/draft-riikonen-silc-pp-09.txt
+  /usr/share/doc/silc-toolkit/draft-riikonen-silc-spec-09.txt
+  /usr/share/doc/silc-toolkit/toolkit/*
+  /usr/share/doc/silc-toolkit/tutorial/*
 
 ------------------
 
 Port Notes:
 
------ version 1.1.7-1 -----
-Version bump.
-
------ version 1.1.5-1 -----
-Version bump.
-
------ version 1.1.3-1 -----
-Initial release for Cygwin.
+----- version 1.1.9-1 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:

@@ -1,0 +1,89 @@
+--- origsrc/silc-toolkit-1.1.9/lib/Makefile.am	2009-01-08 08:29:28.000000000 -0600
++++ src/silc-toolkit-1.1.9/lib/Makefile.am	2009-05-03 18:42:55.937375000 -0500
+@@ -28,11 +28,7 @@ AUTOMAKE_OPTIONS = 1.0 no-dependencies f
+ # SILC Library dirs
+ SILCLIB_DIRS =	contrib	silccore	silcutil	silcapputil	silccrypt	silcskr	silcmath	silcsim	silcasn1	silcske	silchttp	silcsftp	silcvcard
+ if SILC_ENABLE_SHARED
+-if SILC_WIN32
+-LIBTOOL_OPTS= -release $(LIB_BASE_VERSION) -rpath $(DESTDIR)$(libdir) -export-dynamic -no-undefined
+-else
+-LIBTOOL_OPTS= -release $(LIB_BASE_VERSION) -rpath $(DESTDIR)$(libdir)
+-endif
++LIBTOOL_OPTS= -release $(LIB_BASE_VERSION) -rpath $(libdir) -export-dynamic -no-undefined
+ LIBTOOL_SILC_VERSION = -version-info $(LIBSILC_CURRENT):$(LIBSILC_REVISION):$(LIBSILC_AGE)
+ LIBTOOL_SILCCLIENT_VERSION = -version-info $(LIBSILCCLIENT_CURRENT):$(LIBSILCCLIENT_REVISION):$(LIBSILCCLIENT_AGE)
+ LIBTOOL_SILCSERVER_VERSION = -version-info $(LIBSILCSERVER_CURRENT):$(LIBSILCSERVER_REVISION):$(LIBSILCSERVER_AGE)
+@@ -43,33 +39,27 @@ LIBTOOL_SILCCLIENT_VERSION =
+ LIBTOOL_SILCSERVER_VERSION =
+ endif
+ 
+-if SILC_WIN32
+ SILC_LINK_LIBS=$(LIBS)
+-SILCCLIENT_LINK_LIBS=$(LIBS) -lsilc
+-SILCSERVER_LIBS=$(LIBS) -lsilc
+-else
+-SILC_LINK_LIBS=
+-SILCCLIENT_LINK_LIBS=
+-SILCSERVER_LIBS=
+-endif
++SILCCLIENT_LINK_LIBS=$(LIBS) libsilc.la
++SILCSERVER_LIBS=$(LIBS) libsilc.la
+ 
+-SILCLIB = libsilc.a
++SILCLIB = libsilc.la
+ 
+ # SILC Client Library dirs
+ SILCCLIENTLIB_DIRS = silcclient
+-SILCCLIENTLIB = libsilcclient.a
++SILCCLIENTLIB = libsilcclient.la
+ 
+ 
+ SUBDIRS = $(SILCLIB_DIRS) $(SILCSERVERLIB_DIRS) $(SILCCLIENTLIB_DIRS)
+ 
+-CLEANFILES = libsilc.a $(SILCCLIENTLIB) $(SILCSERVERLIB)
+-DISTCLEANFILES = libsilc.a $(SILCCLIENTLIB) $(SILCSERVERLIB)
++CLEANFILES = libsilc.la $(SILCCLIENTLIB) $(SILCSERVERLIB)
++DISTCLEANFILES = libsilc.la $(SILCCLIENTLIB) $(SILCSERVERLIB)
+ 
+ remove:
+ 	-rm -f $(CLEANFILES)
+ 
+ all:
+-	$(MAKE) remove $(SILCLIB) $(SILCSERVERLIB) $(SILCCLIENTLIB)
++	$(MAKE) $(SILCLIB) $(SILCSERVERLIB) $(SILCCLIENTLIB)
+ 
+ install-exec-hook:
+ 	-mkdir -p $(DESTDIR)$(libdir)
+@@ -81,14 +71,14 @@ LIBSILC_CURRENT=@LIBSILC_CURRENT@
+ LIBSILC_REVISION=@LIBSILC_REVISION@
+ LIBSILC_AGE=@LIBSILC_AGE@
+ 
+-libsilc.a:
++libsilc.la:
+ 	find $(SILCLIB_DIRS) -type f -name *.lo | xargs	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) $(SILC_LINK_LIBS)	$(LIBTOOL_SILC_VERSION)	$(LIBTOOL_OPTS) -o libsilc.la
+ 
+ LIBSILCCLIENT_CURRENT=@LIBSILCCLIENT_CURRENT@
+ LIBSILCCLIENT_REVISION=@LIBSILCCLIENT_REVISION@
+ LIBSILCCLIENT_AGE=@LIBSILCCLIENT_AGE@
+ 
+-libsilcclient.a:
++libsilcclient.la: libsilc.la
+ 	find $(SILCCLIENTLIB_DIRS) -type f -name *.lo | xargs	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS)	$(SILCCLIENT_LINK_LIBS) $(LIBTOOL_SILCCLIENT_VERSION)	$(LIBTOOL_OPTS) -o libsilcclient.la
+ 
+ 
+--- origsrc/silc-toolkit-1.1.9/lib/silcmath/mp_gmp.c	2009-01-08 08:29:19.000000000 -0600
++++ src/silc-toolkit-1.1.9/lib/silcmath/mp_gmp.c	2009-05-03 17:23:13.499875000 -0500
+@@ -26,6 +26,13 @@ void silc_mp_init(SilcMPInt *mp)
+   mpz_init(mp);
+ }
+ 
++SilcBool silc_mp_sinit(SilcStack stack, SilcMPInt *mp)
++{
++  /* XXX TODO */
++  mpz_init(mp);
++  return TRUE;
++}
++
+ void silc_mp_uninit(SilcMPInt *mp)
+ {
+   mpz_clear(mp);
